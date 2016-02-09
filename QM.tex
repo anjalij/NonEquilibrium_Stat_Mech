@@ -1,0 +1,335 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\setlength{\parindent}{0pt}
+
+\textbf{Schrodinger Equation}
+\vspace{5mm}
+
+The non-relativistic (energy = $frac{p^2}{2m}$) and in one dimension 
+\begin{equation}
+i\hbar \frac{\partial}{\partial t}\psi (x,t) = (-\frac{\hbar}{2m}\frac{\partial^2}{\partial x^2} +V(x,t))\psi (x,t)
+\end{equation}
+
+Note: $\psi(x,t)$ is complex by necessity, then the right would be real and the left would be imaginary. 
+\vspace{5mm}
+Note:complex numbers are used in E and M, but in a superficial way.
+
+\begin{equation}
+\bar{E}(z,t)=Re(E_0(\hat{x}+i\hat{y})e^{kz+wt})
+\end{equation}
+
+Here complex numbers just give an elegant way of writing down the electric potential of circularly polarized light, where the x and y components are out of phase and the wave is propogating in the z direction. But E is really real, and all i's are auxiliary. 
+
+\vspace{5mm}
+\begin{enumerate}
+\item This is a first order differential equation in times. This has implications, if you know the wave function all over space, you can calculate it a little later. That is what a first order differential equation tells you. 
+\item The equation is linear. You can superimpose them. $\psi_1$,$\psi_2$ are solutions, then so is $a_1\psi_1+a_2\psi_2$ where $a_1$, $a_2$ are complex. 
+\end{enumerate}
+
+What is the interpretation of the wave function?
+\begin{equation}
+P(x,t)=\rho(x,t)=\psi^*(x,t)\psi(x,t)
+\end{equation}
+Where P(x) is the probability density, and P(x)dx is the probability that you will find the particle in the interval [x,x+dx] at time t. 
+\vspace{5mm}
+\textbf{Note:} $\int_{-\infty}^{\infty}\vert \psi(x,t)\vert^2dx=1$ The particle must be somewhere. Note that this implies that the units: $[\psi]=\frac{1}{\sqrt{L}}$. Note that the schrodinger equation evolves naturally from unitary time evolution (Dirac derivation). 
+
+This particle must be somewhere, therefore, the integral over all x, must be one for all t. Quick calculation: 
+\begin{equation}
+\frac{d}{dt}\int_{-\infty}^{\infty}\vert\psi(x,t)\vert^2dx=0
+\end{equation}
+
+
+Note this will require that the wf goes to zero at x = infinity and negative infinity, which comes from the assumption that the probability is normalized for a particular time $t_o$, but it also requires that the derivative of the potential goes to zero at these spatial limits. of course this is not guaranteed, it depends entirely on the form of V(x,t) which could be completely pathological. That potential is what makes the schrodinger equation so complicated.
+
+\vspace{5mm}
+
+Probability Current
+\begin{equation}
+J(x,t)=\frac{\hbar}{m}Im(\psi^*\frac{\partial}{\partial t})
+\end{equation}
+\vspace{5mm}
+\textbf{Vector Space Representation of QM}
+An operator acting on an eigenstate, givens an eigen value times the eigenstate. Now these eigenvectors form the basis of a complex eigenspace, where any state of the system can be written as the complex superposition of the set of eigenvectors. 
+
+\begin{equation}
+\vert \Psi > = \sum_{i=1}^nc_i\vert \psi_i>
+\end{equation}
+where $c_i\in \mathbb{C}$
+\vspace{5mm}
+The eigenstates are orthogonal to eachother of course\newline
+$<\psi_i\vert\psi_j>=0 \hspace{5mm} \forall i,j$
+And they are normalized\newline
+$<\psi_i\vert\psi_i>=1 \hspace{5mm} \forall i$
+
+
+Thus the eigenstates are orthonormal. 
+\vspace{5mm}
+
+\textbf{Note} that this means that if:
+\begin{equation}
+\vert\alpha>=\alpha_1\vert\psi_1>+\alpha_2\vert\psi_2>
+\end{equation}
+Then
+\begin{equation}
+<\alpha\vert=\alpha_1^*<\psi_1\vert+\alpha_2^*<\psi_2\vert
+\end{equation}
+This is necessary for the normalization of the state. 
+
+\vspace{5mm}
+
+\textbf{Operators}
+Operators are matrices\newline
+\textcolor{red}{SIMILARITY transformations?}
+\vspace{5mm}
+
+Orbital Angular momentum Operators\newline
+\begin{equation}
+\hat{L_z}=\hat{z}p_y-\hat{y}p_x
+\end{equation}
+
+\begin{equation}
+[\hat{L_i},\hat{L_j}]=i\hbar\epsilon_{ijk}\hat{L_k}
+\end{equation}
+
+similarly want Spin Orbital Angular momentum
+
+\begin{align}
+[\hat{S_x},\hat{S_y}]=i\hbar\hat{S_z}\\
+[\hat{S_y},\hat{S_z}]=i\hbar\hat{S_x}\\
+[\hat{S_z},\hat{S_x}]=i\hbar\hat{S_y}
+\end{align}
+
+\textbf{SideNote:} A hermitian matrix should be equal to its conjugate transpose. For a 2X2 matrix to be heritian it should have the form:
+
+\[\left(\begin{array}{cc}
+2c & a-bi \\
+a+bi & 2d
+\end{array}\right)\]
+
+Want to remove from this the identity matrix. Therefore, subtract (c-d)$\mathbb{I}_{2X2}${
+
+\[\left(\begin{array}{cc}
+d-c & a-bi \\
+a+bi & c-d
+\end{array}\right)\]
+
+
+Now the diagonal terms are just like the $\hat{S_z}$ matrices. So you get
+\begin{equation}  
+\left(\begin{array}{cc}
+0 & a-bi \\
+a+bi & 0
+\end{array}\right)
+=
+a\left(\begin{array}{cc}
+0 & 1 \\
+1 & 0
+\end{array}\right)
++b
+\left(\begin{array}{cc}
+0 & -i \\
+i & 0
+\end{array}\right)
+\end{equation}
+Note these are not unique, but conventional basis vectors for this space: 
+
+\begin{align}
+\hat{S_x}&\rightarrow -\hat{Sy} \\
+\hat{S_y}&\rightarrow -\hat{Sx}
+\end{align}
+You get identical equations. 
+
+but these are the pauli matrices
+\begin{center} 
+$\sigma_x= 
+\left(\begin{array}{cc}
+0 & 1 \\
+1 & 0
+\end{array}\right)
+\hspace{10mm}
+\sigma_y=
+\left(\begin{array}{cc}
+0 & -i \\
+i & 0
+\end{array}\right)
+\hspace{10mm}
+\sigma_z=
+\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)$
+\end{center}
+The eigenvalues and eigenvectors of these matrices can be calculated and you will see that the eigenvectors of the $\hat{S_{x or y}}$ matrices can be written as linear combinations of the $\hat{S_z}$ eigenvectors. And a state along an arbitrary direction. 
+\vspace{5mm}
+The spin operator:
+\begin{equation}
+\hat{S}\hat{n}=\frac{\hbar}{2}
+\left(\begin{array}{ccc}
+n_z & n_x-in_y\\
+n_x+in_y & -n_z
+\end{array}\right)
+\end{equation}
+
+Now to calculate the eigenvectors and values. 
+\begin{equation}
+det(A-\lambda\mathbb{I})=0
+\end{equation}
+
+Note that if the matrix is diagonal, the elements along the diagonal are the eigenvalues. Suppose you have a matrix equation of the form:
+\begin{equation}
+M^2+\alpha M+\beta \mathbb{I}=0
+\end{equation}
+Then you can use this to find the eigenvalues, by multiplying the equation by the eigenvector and putting in the eigen values you get the characteristic equation:
+\begin{equation}
+(\lambda^2+\alpha\lambda+\beta)\bar{v}=0
+\end{equation}
+Note that the trace of a matrix is the sum of the eigenvalues. 
+
+\vspace{5mm}
+\textbf{Commutators/Anti-Commutators}
+\begin{equation}
+{A,B}=AB+BA
+\end{equation}
+Then you can get:
+\begin{equation}
+AB=\frac{1}{2}([A,B]+{A,B})
+\end{equation}
+\vspace{5mm}
+Reminder: Def of vector space/Field
+\begin{enumerate}
+\item distributive property
+\item unique additive inverse
+\item multiplicative identity. 
+\item additive property
+\item scalar multiplication property. 
+\end{enumerate}
+Examples of vector spaces:
+\begin{enumerate}
+\item The set of N component vectors is a vector space over $\mathbb{R}$
+\item all MXN matrices with complex enteries. Is a complex vector space.
+\item The space of 2X2 hermitian matrices is a real vector space. because if you multiply the hermitian matrix by a complex number you lose the hermiticity. You can only multiply by a real number.
+\item set of all polynomials $p(z)=a_0+a_1z+\cdot \cdot \cdot +a_nz^n$ where the $a_i \in \mathbb{F}$ Note that this is infinite dimensional. 
+\item The set $\mathbb{F}^\infty$ of infinite sequences, is a vector space over $\mathbb{F}$
+\item The set of complex functions on an interval $ x \in [a,b]$ Is a complex vector space. 
+\end{enumerate}
+What is a subspace of a vector space V, is a subset of V that is still a vector space. Note it must include the zero vector. 
+\vspace{5mm}
+Direct Sum: A vector space can be decomposed into a sum of subspaces\\
+\begin{equation}
+V=U_1\oplus U_2\cdots \oplus U_m
+\end{equation}
+Then any $v\in V$ can be written uniquely as
+\begin{equation}
+v=u_1+u_2\cdots u_m
+\end{equation}
+such that $u_j \in U_j$
+If this is not unique, then the decomposition is overlapping. 
+\vspace{5mm}
+$span(v_1,v_2,...,v_n)={a_1v_1+a_2v_2+\cdots+a_nv_n\vert a_i \in \mathbb{F}}$\\
+V is \textbf{finite dimensional} if there exists such a spanning list. 
+
+\vspace{5mm}
+
+A list is \textbf{linearly independent} if \\
+$\sum_{i=1}^na_iv_i=0$ has the unique solution $a_i=0 \forall i$
+
+\vspace{5mm}
+
+A \textbf{basis} of V is a list of vectors in V that span V and are linearly independent. Note that a basis is not necessarily unique!
+
+\vspace{5mm}
+A linear map, can take you from one vector space to another, but if you map from one vector space to the same vector space, it is a called operator:\\
+$T:V\\rightarrowV$\\
+$T(\bar{u}+\bar{v})=T\bar{u}+T\bar{v}$\\
+$T(a\bar{v})=aT(\bar{v})$\\
+This makes it into a linear operator. Which means that all you need to nkow is how it acts on the basis vectors. Note that not all operators are linear (e.g. an operator which squares vectors is not a linear map by the above definition).
+
+\vspace{5mm}
+\textbf{Examples}
+\begin{enumerate}
+\item $V=\mathbb{R}[x]$ real polynomials\\
+$T=\frac{\hat{\partial}}{\partial x} \rightarrow Tp=p'$ Is a linear operator|
+$S=\hat{x} \rightarrow Sp=px$ Is a linear operator
+\item $V=\mathbb{F}^\infty={(x_1,x_2,\cdots)\vert x_i \in \mathbb{F}}$\\
+L=left shift \hspace{10mm} $L(x_1,x_2, \cdots)=(x_2,\cdots)$\\
+R=right shift \hspace{10mm} $R(x_1,x_2,\cdots)=(0,x_1,x_2,\cdots)$\\
+Have to put zero there, or the zero vector would shift to a non-zero vector and by the $T(a\bar{v})=aT(\bar{v})$, zero must always map to zero. 
+\item Zero operator $\hat{0}x=0$
+\item Identity operator 
+\end{enumerate}
+
+\vspace{5mm}
+\textbf{Note} The set of all linear operators is itself a vector space. But it has an additional structure, multiplication (makes it like a field, but missing commutativity and does not always have multiplicative inverses). It has multiplication because these operators are like square matrices. 
+
+\textbf{Why are operators useful?}
+\begin{enumerate}
+\item observables (e.g. Hamiltonians)
+\item states are described as vectors, but they can also be described as density opertators
+\item symmetries. 
+\end{enumerate}
+
+\vspace{5mm}
+\textbf{Commutators} measure the extent to which two operators do not commute.\\
+$V=\mathbb{R}[x]$ S,T defined as above\\
+$STx^n=Snx^{n-1}=nx^n$\\
+$TSx^n=Tx^{n+1}=(n+1)x^n$\\
+$[T,S]=x^n$ Since the ${x^n}$ is the set of basis polynomials of this vector space, then this is true for all polynomials, then $[T,S]=\mathbb{I}$
+\vspace{5mm}
+
+\textbf{Null Space of an operator}\\
+null(T)$={v\in V:Tv=0}\supseteq 0$ The zero vector is always part of the nullspace, but it can be much bigger. Note that the null space is a subspace of V. \\
+\begin{align}
+T \hspace {2mm} injective & \Leftrightarrow if u\neq v, \Rightarrow Tu \neq Tv \\
+& \Leftrightarrow if u\neq v, \Rightarrow T(u-v) \neq 0\\
+& \Leftrightarrow if u-v \neq 0, \Rightarrow T(u-v) \neq 0\\
+& \Leftrightarrow null(T)={0}
+\end{align}
+
+\vspace{5mm}
+\textbf{Range}
+range(T)$=T(V_={Tv:v \in V}$ is also a subspace of V. \\
+range(T)$=V \Leftrightarrow$ T is surjective\\
+dim V=dim(null(T))+dim(range(T))\\
+The intutition of this is that a linear map kills part of the input and maps it to zero, while then rest is the degrees of freedom that affect the output. but this intuition is not always true, the nullspace and the range are not always orthogonal.\\
+
+\begin{center}
+$T=\left(\begin{array}{cc}
+0 & 1\\
+0 & 0
+\end{array}\right)$, null(T)=span($e_1$), range(T)=span($e_1$)
+\end{center}
+note that this problem does not occur if there is a diagonal matrix. But not all matrices can be diagonalized. But really these live in two different spaces. nullspace is a subspace of the input space, and range is a subspace of the output space, if you look at what vectors map to the range, that would be span($e_2$). So basically if the nullspace is not just the zero vector, some of the input basis vectors get mapped to zero, and this is a loss of dimensionality in the output vector space. 
+\vspace{5mm}
+\textbf{Invertability}
+If T has a left and a right inverse, then they are the same, and T is said to be invertible.\\
+$\exists$ left inverse, when we have have not done "irreparable damage" when some linear operator can be applied to give us back our original operator.\\
+\begin{center}
+$\exists$ left inverse iff T is injective. (i.e. two vectors cannot map to the same vector...you cannot lose information).
+\end{center} 
+
+\begin{center}
+$\exists$ right inverse iff T is surjective. 
+\end{center} 
+\textcolor{red}{Dont understand the intuition here} the intutition about being surjective is that if you fail to reach all of points in V after you apply the linear map, you have lost some information. 
+\textbf{Note} If T is bijective, then T is invertible.\\
+If V is finite dimensional then sujectiveness implies injectiveness from the dimension sum above. But this is not true for infinite dimesional systems.  Note that this comes from the dimesion summing above, which only works if V is finite dimensional. \\
+EX: left shift is surjective, but not injective\\
+EX: rigth shift is injective, but not surjective. 
+
+\vspace{5mm}
+
+The beauty of matrix operators is that once the are applied to the basis vectors, their application to any other vector can be stored. 
+\begin{align}
+& \bar{v}=a_1\bar{v_1}+\cdots+a_n\bar{v_n}\\
+& Tv_j=T_{1j}v_1+\cdots+T_{nj}v_n=\sum_{j=1}^nT_{ij}v_j\\
+& T\bar{v}=a_1T\bar{v_1}+\cdots+a_nT\bar{v_n}=\sum_{i=1}^n\sum_{j=1}^nT_{ij}a_jv_i=\sum_{i=1}^nb_iv_i\\
+& b_i
+\end{align}
+
+\end{document}

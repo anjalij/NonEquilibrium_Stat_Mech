@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath}
+\begin{document}
+\setlength{\parindent}{0pt}
+
+\title{Non-equilibrium Statistical Mechanics/ Statistical Mechanics of Time Dependent processes}
+\date{ January 13, 2016}
+
+\maketitle
+
+Equilibrium statistical mechanics considered time averaged state variables and time does not enter in explicitly? Equilibrium stat mech avoids time in answering questions like "what is the probability that a system will explore a particular microscopic state?"
+
+In equilibrium stat mech you have time averages of measurable quantities:
+\begin{equation}
+\underbrace{\bar{\phi}}_{\text{average thermodynamic variable}}=\frac{1}{\tau}\int_t^{t_o+\tau}\phi(t)dt
+\end{equation}
+
+In equilibrium statistical mechanics you look for a set of macroscopic variables averaged that can be used to predict the state of the system {N,E,V} for the microcanonical ensemble, {N,T,V} for the canonical ensemble and {$\mu$,V,T} for the grand canonical ensemble. 
+
+Generally we assume that the time $\tau$ is sufficiently large that you can convert the time average into an ensemble average and the two are identical. 
+
+\begin{equation}
+\bar{\phi}=\sum_{c}P(c)\phi(c)
+\end{equation}
+where P(C) can be any probability distribution, but canonically is the Boltzman distribution:
+
+\begin{equation}
+P(c)=\frac{1}{Z}e^{\frac{1}{kt}E(c)}
+\end{equation}
+
+where E(c) is the energy of the state.
+
+Note: In this context "long enough" means that the system has time to sample enough microstates, which means that it is long compared to a microscopic time scale (like molecular collision times) and long compared with the "relaxation time" of the system. \textcolor{red}{how do you calculate the relaxation time again?} In the equilibrium picture we don't say when we sample a paricular microstate, only with what probability we can sample it. 
+
+So here order doesn't matter, the statistics are memoryless, although in reality they are not, microscopically they are not memoryless? \newline 
+\newline
+Topics to cover:
+\begin{enumerate}
+
+\item Linear response theory
+
+Many experiments measure things found in linear response theory. \textcolor{red}{ if a system is large, deviations of $\phi$(t) is very small compared to the average $\phi$ just because why? is it because the high probability macrostate always lie close to the mean value of $\phi$? is it true that $\vert\phi(t_1)-\phi\vert>\vert\phi(t_2)-\phi\vert$ then $P(\Omega[\phi(t_1)])>P(\Omega[\phi(t_2)])$}
+\newline
+\newline
+
+\textcolor{red}{insert image}
+
+\textbf{Fluctuation-Disappation Theorem asks:}
+\begin{list}{•}{•}
+
+
+\item[•] If $\phi(t)>\phi$, what is the probability that $\phi(t+\tau)>\phi$?
+
+
+\end{list}
+
+\end{enumerate}
+
+
+\textbf{Linear Response Theory}
+
+Formalized in QM and then you can turn it back to classical mechanics by substituting the commutators for poisson brackets.
+
+The Hamiltonian of a many bodied system: \textcolor{red}{what is specifically many bodied?}
+
+\begin{equation}
+H_t=H_o-AF(t)
+\end{equation}
+$H_t$ = Total Hamiltonian
+\newline
+$H_o$ = Time independent (equilibrium) hamiltonian \textcolor{red}{does SS have a t-indep H?}
+\newline
+A = operator/observable to which the system couples (ex: magnetization/polarization/density of system)
+\newline
+F(t) = Time dependent driver of external perturbation (usually considered to be periodic in time)
+
+\vspace{5mm} 
+
+\textbf{Note}: This is the Schrodinger picture, where the time dependence is carried by the state vectors,  but the operators (observables etc) are constant with respect to time. In other words, the state of the system evolves in time. In a closed quantum system, the unitary operator (the time evolution operator) acts on the $t_o$ state. 
+
+\begin{equation}
+\vert \psi(t)> = U(t,t_o)\vert \psi (t_o)>
+\end{equation}
+
+If the Hamiltonian of the system does not vary with time, the time evolution operator has the form
+
+\begin{equation}
+U(t,t_o)=e^{-iH(t-t_o)/\hbar}
+\end{equation}
+\textcolor{red}{what does this have to do with exponential distribution...it looks like the exponential distribution....}
+
+\vspace{5mm}
+\textbf{Assumptions of Linear Response}
+For linear response theory to work, we assume that there is an adiabatic turning on of the field, so that the system has time to adjust to the field. As t $\rightarrow -\infty$,  AF(t) $\rightarrow$ 0. The external field turns on very slowly.
+
+In order to put this assumption into the form of F, which if it is a periodic potential, is complex, we add a real component
+
+\begin{equation}
+F(t) ~ e^{i\omega t}\cdot e^{\eta t} \text{where } \eta \rightarrow 0^+
+\end{equation}
+
+\textcolor{red}{do we have to go to Fourier space? Can't we just define F(t) as a sine function and then another function that takes it to zero, and do it in real space?}
+
+\vspace{5mm}
+
+Linear response also requires the perturbation to be small. Thus $\omega$ is real \textcolor{red}{?} and small compared with the timescale. This is a microscopic timescale (i.e. the equilibrium collision time). This implies a local equilibrium assumption (local in time). \textcolor{red}{Is this the same assumption in equilibrium thermodynamics of pushing a piston slowly? What happens if you push it quickly, the system might not realize the predicted equilbrium state? Why? because the way it will disappate energy is not predictable?}
+
+\vspace{5mm}
+
+\textbf{Review: What is a Density Matrix?}
+A pure quantum state corresponds to a vector called a a state vector.  A mixed quantum state corresponds to a probabilistic mixture of pure states; however different distributions of pure states can generate equivalent (physically indistinguishable) mixed states. \textcolor{red}{is this also true of classical many-body systems?}. mixed states are represented by density matrice.hese probability distributions arise for both mixed states and pure states: it is impossible in quantum mechanics (unlike classical mechanics) to prepare a state in which all properties of the system are fixed and certain. This is exemplified by the uncertainty principle, and reflects a core difference between classical and quantum physics. Even in quantum theory, however, for every observable there are some states that have an exact and determined value for that observable.
+
+The operator serves as a linear function which acts on the states of the system. The eigenvalues of the operator correspond to the possible values of the observable. i.e. it is possible to observe a particle with that value...
+
+\textcolor{red}{what is a linear combination of eigenstates in QM?}
+
+There is no state which is simultaneously an eigenstate for all observables. For example, we cannot prepare a state such that both the position measurement Q(t) and the momentum measurement P(t) (at the same time t) are known exactly; at least one of them will have a range of possible values.[b] This is the content of the Heisenberg uncertainty relation.
+
+A density matrix is the QM equivalent to a phase-space probability measure. Suppose a quantum system can be found in state $\vert \psi_1 >$ with probability $p_1$, and in state $\vert \psi_i >$ with probability $p_i$. Then the density operator is:
+
+\begin{equation}
+\hat{\rho}=\sum_i p_i \vert \psi_i><\psi_i\vert
+\end{equation}
+
+\vspace{5mm} 
+
+This is a square, diagonal matrix with 
+
+\textbf{Measuring Linear Response}
+We measure the effect of the perturbation on some other observable B.
+$\rho$
+
+\end{document}
