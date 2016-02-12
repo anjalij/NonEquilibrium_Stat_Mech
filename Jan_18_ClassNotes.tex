@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath}
+\begin{document}
+\setlength{\parindent}{0pt}
+
+\textbf{Linear Response Theory}
+
+\vspace{5mm}
+
+Here the system is described by:
+\begin{equation}
+	H=\underbrace{H_0}_{\text{Equilibrium Hamiltonian}}-\underbrace{A}_{\text{observable/operator\\ to which field couples}}\underbrace{F(t)}_{\text{external field}}
+\end{equation}
+
+For F=0, the observable we are measuring is at its equilibrium value $\bar{B}=\bar{B_0}=tr(\rho_0 B)=<n|B|n>e^{-\frac{\beta E_n}{z}}$\\
+\textcolor{red}{not sure that this is right.This means that $\rho_0$ is a diagonal matrix, and I am not sure about the last line. Exponential is probably wrong}.
+
+\vspace{5mm}
+
+We we add a perturbation in linear response theory we make several assumptions:
+\begin{equation}
+F(t)~e^{i\omega t} e^{\eta t} \hspace{5mm} \eta \rightarrow 0^+
+\end{equation}
+\begin{enumerate}
+	\item early times there is no perturbation
+	\item there is an adiabatic turning on of the perturbation
+	\item the time scale over which F changes is much slowler than the microscopic timescales/relaxation times/molecular collision times/local equilibrium. Implying\\
+	$\rho(t)=\rho_0-\Delta\rho(t)$
+\end{enumerate}
+When we add a perturbation to the system in the form of F(t), the observable B is no longer time independent:
+\begin{align}
+& \bar{B}(t)=Tr(\rho(t)B)\\
+&\underbrace{\delta\bar{B}(t)}_{\text{response}}=\bar{B}(t)-\bar{B_0}
+\end{align}
+Our goal is to get an expression for the response, thus we need an expression for $\rho(t)$
+
+\begin{equation}
+\frac{d}{dt}\rho(t)=\frac{1}{i\hbar}[H_t,\rho(t)]
+\end{equation}
+\textcolor{red}{Need to uinderstand where this comes from it is related to the Liouville operator}
+
+\vspace{5mm}
+
+\begin{align}
+\frac{d}{dt}\rho(t) & =\frac{1}{i\hbar}[H_0-AF(t),\rho_0+\Delta\rho(t)]\\
+& = \frac{1}{i\hbar}[H_0,\Delta\rho(t)]-\frac{1}{i\hbar}[A,\rho_0]F(t) + \text{(higher order terms)}
+\end{align}
+Note that since $H_0$ and $\rho_0$ commute their commutator becomes zero. 
+
+\vspace{5mm}
+
+By convention: $H_0*\hat{O}=[H_0,\hat{O}]$ \textcolor{red}{we are changing pictures, but I do not know which picture we have changed to}
+
+
+
+
+\end{document}
